@@ -8,6 +8,7 @@ import {
 	Select,
 } from "@chakra-ui/react";
 import LocaleContext, { locales } from "../components/context/get-locale";
+import Link from "next/link";
 
 const Navigation = () => {
 	const { currentLocale, updateLocale } = useContext(LocaleContext);
@@ -32,10 +33,26 @@ const Navigation = () => {
 			backgroundColor="white"
 			boxShadow="0px 8px 24px 0px rgba(149,157,165,0.2)"
 		>
-			<Image h={48} src={`https://media.graphcms.com/3LKjkQiSBWIVZMvJ31pj`} />
+			<Link href="/" passHref>
+				<a>
+					<Image
+						h={48}
+						src={`https://media.graphcms.com/3LKjkQiSBWIVZMvJ31pj`}
+					/>
+				</a>
+			</Link>
 			<Stack direction="column">
-				<ChakraLink href="/" px={2}>
-					About us
+				<ChakraLink href="/about-us" px={2}>
+					O nas
+				</ChakraLink>
+				<ChakraLink href="/culture" px={2}>
+					O kulturi
+				</ChakraLink>
+				<ChakraLink href="/calendar" px={2}>
+					Koledar
+				</ChakraLink>
+				<ChakraLink href="/contact" px={2}>
+					Kontact
 				</ChakraLink>
 				<Box className="relative">
 					<Select
