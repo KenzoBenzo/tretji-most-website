@@ -14,12 +14,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<LocaleProvider>
 					<Flex minH="75vh">
 						<Navigation />
-						<Box>
+						<Box p={0} w="-webkit-fill-available">
 							<Component {...pageProps} />
+							<Footer />
 						</Box>
 					</Flex>
-
-					<Footer />
 				</LocaleProvider>
 			</ChakraProvider>
 		</>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link as ChakraLink, Box, Text, Flex, Image } from "@chakra-ui/react";
+import Link from "next/link";
 
 const Footer = () => {
 	return (
@@ -14,18 +15,26 @@ const Footer = () => {
 				direction={["column", "column", "row"]}
 			>
 				<Box>
-					<ChakraLink href="/about-us/">
-						<Text>O nas</Text>
-					</ChakraLink>
-					<ChakraLink href="/culture/">
-						<Text>O kulturi</Text>
-					</ChakraLink>
-					<ChakraLink href="/calendar/">
-						<Text>Koledar</Text>
-					</ChakraLink>
-					<ChakraLink href="/partners/">
-						<Text>Partnerji</Text>
-					</ChakraLink>
+					<Link href="/about-us/" passHref>
+						<ChakraLink>
+							<Text>O nas</Text>
+						</ChakraLink>
+					</Link>
+					<Link href="/culture/" passHref>
+						<ChakraLink>
+							<Text>O kulturi</Text>
+						</ChakraLink>
+					</Link>
+					<Link href="/calendar/" passHref>
+						<ChakraLink>
+							<Text>Koledar</Text>
+						</ChakraLink>
+					</Link>
+					<Link href="/partners/" passHref>
+						<ChakraLink>
+							<Text>Partnerji</Text>
+						</ChakraLink>
+					</Link>
 				</Box>
 				<Box>
 					<Text>Kontakt:</Text>

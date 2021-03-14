@@ -1,6 +1,5 @@
 import React from "react";
 import {
-	Heading,
 	FormLabel,
 	Input,
 	Textarea,
@@ -12,24 +11,8 @@ import { SingleSection } from "../components/single-section";
 
 const ContactPage = () => {
 	return (
-		<SingleSection>
-			<Heading as="h1" textStyle="h1" textAlign="center" mb={12}>
-				Stopite v stik z nami.
-			</Heading>
-			<Box
-				as="form"
-				// @ts-ignore
-				action="/success/"
-				maxW="750px"
-				mx="auto"
-				name="contact"
-				data-netlify="true"
-				method="post"
-				data-netlify-honeypot="bot-field"
-			>
-				<input type="hidden" name="bot-field" />
-				<input type="hidden" name="form-name" value="contact" />
-
+		<SingleSection heading="Stopite v stik z nami.">
+			<Box maxW="750px" mx="auto" name="contact">
 				<FormControl isRequired>
 					<FormLabel htmlFor="name" fontWeight={700}>
 						Ime

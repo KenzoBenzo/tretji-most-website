@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Heading, Text, Flex, Image, Stack } from "@chakra-ui/react";
 import Event from "../components/event";
+import { SingleSection } from "../components/single-section";
 // import { graphql, useStaticQuery } from "gatsby";
 
 const CalendarPage = () => {
@@ -23,7 +24,7 @@ const CalendarPage = () => {
 	// );
 
 	return (
-		<Box px={32}>
+		<>
 			<Flex mb={64} direction={["column", "row"]}>
 				<Box w="50%" h="400px" py={32} px={40}>
 					<Heading as="h1" fontSize="48px">
@@ -72,7 +73,7 @@ const CalendarPage = () => {
 				/>
 				{/* ))} */}
 			</Stack>
-		</Box>
+		</>
 	);
 };
 

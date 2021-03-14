@@ -24,7 +24,8 @@ const Navigation = () => {
 		<Flex
 			minW="fit-content"
 			position="sticky"
-			top="0"
+			top={0}
+			bottom={0}
 			direction="column"
 			justify="space-between"
 			align="center"
@@ -43,18 +44,18 @@ const Navigation = () => {
 				</a>
 			</Link>
 			<Stack direction="column">
-				<ChakraLink href="/about-us" px={2}>
-					O nas
-				</ChakraLink>
-				<ChakraLink href="/culture" px={2}>
-					O kulturi
-				</ChakraLink>
-				<ChakraLink href="/calendar" px={2}>
-					Koledar
-				</ChakraLink>
-				<ChakraLink href="/contact" px={2}>
-					Kontact
-				</ChakraLink>
+				<Link href="/about-us" passHref>
+					<ChakraLink px={2}>O nas</ChakraLink>
+				</Link>
+				<Link href="/culture" passHref>
+					<ChakraLink px={2}>O kulturi</ChakraLink>
+				</Link>
+				<Link href="/calendar" passHref>
+					<ChakraLink px={2}>Koledar</ChakraLink>
+				</Link>
+				<Link href="/contact" passHref>
+					<ChakraLink px={2}>Kontakt</ChakraLink>
+				</Link>
 				<Box className="relative">
 					<Select
 						size="sm"

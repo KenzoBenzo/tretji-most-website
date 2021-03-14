@@ -21,6 +21,7 @@ import {
 import { DoubleSection } from "../components/double-section";
 import ImageCard from "../components/image-card";
 import { SingleSection } from "../components/single-section";
+import Link from "next/link";
 
 function IndexPage() {
 	return (
@@ -43,11 +44,11 @@ function IndexPage() {
 						direction={["column", "row"]}
 						alignItems="flex-end"
 					>
-						<FormControl isRequired>
+						<FormControl isRequired minW="200px">
 							<FormLabel>Ime</FormLabel>
 							<Input type="name" />
 						</FormControl>
-						<FormControl isRequired>
+						<FormControl isRequired minW="200px">
 							<FormLabel>E-naslov</FormLabel>
 							<Input type="email" />
 						</FormControl>
@@ -85,74 +86,78 @@ function IndexPage() {
 					shouldWrapChildren={true}
 					spacing={8}
 				>
-					<ChakraLink
-						href="/how-we-work/#lectures"
-						display="inline-block"
-						textAlign="center"
-						borderRadius="6px"
-						p={8}
-						w="245px"
-						_hover={{
-							color: "blue.700",
-							backgroundColor: "blue.50",
-						}}
-					>
-						<LectureIcon boxSize={8} mb={4} />
-						<Text fontSize="xl" fontWeight={700}>
-							Predavanja
-						</Text>
-					</ChakraLink>
-					<ChakraLink
-						href="/how-we-work/#workshops"
-						display="inline-block"
-						textAlign="center"
-						borderRadius="6px"
-						p={8}
-						w="245px"
-						_hover={{
-							color: "blue.700",
-							backgroundColor: "blue.50",
-						}}
-					>
-						<WorkshopIcon boxSize={8} mb={4} />
-						<Text fontSize="xl" fontWeight={700}>
-							Delavnice
-						</Text>
-					</ChakraLink>
-					<ChakraLink
-						href="/how-we-work/#culturalEvents"
-						display="inline-block"
-						textAlign="center"
-						borderRadius="6px"
-						p={8}
-						w="245px"
-						_hover={{
-							color: "blue.700",
-							backgroundColor: "blue.50",
-						}}
-					>
-						<EventIcon boxSize={8} mb={4} />
-						<Text fontSize="xl" fontWeight={700}>
-							Kulturne prireditve
-						</Text>
-					</ChakraLink>
-					<ChakraLink
-						href="/how-we-work/#schooling"
-						display="inline-block"
-						textAlign="center"
-						borderRadius="6px"
-						p={8}
-						w="245px"
-						_hover={{
-							color: "blue.700",
-							backgroundColor: "blue.50",
-						}}
-					>
-						<EducationIcon boxSize={8} mb={4} />
-						<Text fontSize="xl" fontWeight={700}>
-							Šolanje
-						</Text>
-					</ChakraLink>
+					<Link href="/how-we-work/#lectures" passHref>
+						<ChakraLink
+							display="inline-block"
+							textAlign="center"
+							borderRadius="6px"
+							p={8}
+							w="245px"
+							_hover={{
+								color: "blue.700",
+								backgroundColor: "blue.50",
+							}}
+						>
+							<LectureIcon boxSize={8} mb={4} />
+							<Text fontSize="xl" fontWeight={700}>
+								Predavanja
+							</Text>
+						</ChakraLink>
+					</Link>
+					<Link href="/how-we-work/#workshops" passHref>
+						<ChakraLink
+							display="inline-block"
+							textAlign="center"
+							borderRadius="6px"
+							p={8}
+							w="245px"
+							_hover={{
+								color: "blue.700",
+								backgroundColor: "blue.50",
+							}}
+						>
+							<WorkshopIcon boxSize={8} mb={4} />
+							<Text fontSize="xl" fontWeight={700}>
+								Delavnice
+							</Text>
+						</ChakraLink>
+					</Link>
+					<Link href="/how-we-work/#culturalEvents" passHref>
+						<ChakraLink
+							display="inline-block"
+							textAlign="center"
+							borderRadius="6px"
+							p={8}
+							w="245px"
+							_hover={{
+								color: "blue.700",
+								backgroundColor: "blue.50",
+							}}
+						>
+							<EventIcon boxSize={8} mb={4} />
+							<Text fontSize="xl" fontWeight={700}>
+								Kulturne prireditve
+							</Text>
+						</ChakraLink>
+					</Link>
+					<Link href="/how-we-work/#schooling" passHref>
+						<ChakraLink
+							display="inline-block"
+							textAlign="center"
+							borderRadius="6px"
+							p={8}
+							w="245px"
+							_hover={{
+								color: "blue.700",
+								backgroundColor: "blue.50",
+							}}
+						>
+							<EducationIcon boxSize={8} mb={4} />
+							<Text fontSize="xl" fontWeight={700}>
+								Šolanje
+							</Text>
+						</ChakraLink>
+					</Link>
 				</Stack>
 			</SingleSection>
 
