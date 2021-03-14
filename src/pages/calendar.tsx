@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, Heading, Text, Flex, Image, Stack } from "@chakra-ui/react";
 import Event from "../components/event";
-import { SingleSection } from "../components/single-section";
-// import { graphql, useStaticQuery } from "gatsby";
 
 const CalendarPage = () => {
 	// const data = useStaticQuery(
