@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Heading, Text, Flex, Link, Image } from "@chakra-ui/react";
 import { DoubleSection } from "../components/double-section";
+import { SingleSection } from "../components/single-section";
 
 const HowWeWorkPage = () => {
 	return (
@@ -47,7 +48,7 @@ const HowWeWorkPage = () => {
 				<Box w="full" h="256px" backgroundColor="gray.100" mr={16} />
 			</DoubleSection>
 
-			<Box px={32} mb={16} py={16}>
+			<SingleSection>
 				<Text fontSize={["lg", "xl", "2xl"]} lineHeight="short" mb={3}>
 					rez aktivnega sodelovanja na podrocju spoznavanja ni mogoce prodreti
 					dovolj globoko! Zato so predavanja zasnovana tudi kot vstopni impulz
@@ -63,7 +64,7 @@ const HowWeWorkPage = () => {
 					svojimi interesi. Prijavite se lahko *tukaj/prijava na predavanje*
 					Vljudno vabljeni!
 				</Text>
-			</Box>
+			</SingleSection>
 
 			<DoubleSection
 				heading="Delavnice"
@@ -78,7 +79,7 @@ const HowWeWorkPage = () => {
 				<Box w="full" h="256px" backgroundColor="gray.100" mr={16} />
 			</DoubleSection>
 
-			<Box px={32} mb={16} py={16}>
+			<SingleSection>
 				<Text fontSize={["lg", "xl", "2xl"]} lineHeight="short" mb={3}>
 					Umetniška produkcija je zelo sorodna metodam duhovne znanosti. V tem
 					je njena posebnost, v tem se skriva njena moč, pa tudi njena
@@ -91,7 +92,7 @@ const HowWeWorkPage = () => {
 					imate prevec, ali pa vam jo obcasno primanjkuje: pridite in podelite z
 					nami!
 				</Text>
-			</Box>
+			</SingleSection>
 
 			<DoubleSection
 				heading="Kulturni dogodki"
@@ -106,7 +107,7 @@ const HowWeWorkPage = () => {
 				<Box w="full" h="256px" backgroundColor="gray.100" mr={16} />
 			</DoubleSection>
 
-			<Box px={32} mb={16} py={16}>
+			<SingleSection>
 				<Text fontSize={["lg", "xl", "2xl"]} lineHeight="short" mb={3}>
 					Umetniška produkcija je zelo sorodna metodam duhovne znanosti. V tem
 					je njena posebnost, v tem se skriva njena moč, pa tudi njena
@@ -119,7 +120,7 @@ const HowWeWorkPage = () => {
 					imate prevec, ali pa vam jo obcasno primanjkuje: pridite in podelite z
 					nami!
 				</Text>
-			</Box>
+			</SingleSection>
 
 			<DoubleSection
 				heading="Solanje"

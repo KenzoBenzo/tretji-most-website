@@ -22,14 +22,15 @@ const Navigation = () => {
 
 	return (
 		<Flex
-			position="fixed"
+			minW="fit-content"
+			position="sticky"
+			top="0"
 			direction="column"
 			justify="space-between"
 			align="center"
-			left={0}
-			top={0}
-			bottom={0}
+			h="100vh"
 			py={4}
+			px={1}
 			backgroundColor="white"
 			boxShadow="0px 8px 24px 0px rgba(149,157,165,0.2)"
 		>

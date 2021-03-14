@@ -18,13 +18,7 @@ export const SingleSection = ({
 	hero,
 	...props
 }: SectionProps) => (
-	<Box
-		as="section"
-		maxW={hero ? `1200px` : `1000px`}
-		mx="auto"
-		py={16}
-		{...props}
-	>
+	<Box as="section" maxW="1200px" mx="auto" py={16} {...props}>
 		{heading ? (
 			<Heading as="h2" textStyle="h2" textAlign="center" mb={6}>
 				{anchor ? (
