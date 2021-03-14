@@ -22,11 +22,6 @@ const CalendarPage = () => {
 	// 	`
 	// );
 
-	const prettifyDate = (rawDate: string) => {
-		let date = new Date(rawDate);
-		return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
-	};
-
 	return (
 		<Box px={32}>
 			<Flex mb={64} direction={["column", "row"]}>
