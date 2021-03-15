@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<LocaleProvider>
 					<Flex minH="75vh">
 						<Navigation />
-						<Box p={0} w="-webkit-fill-available">
+						<Box p={0} w="fill-available">
 							<Component {...pageProps} />
 							<Footer />
 						</Box>
