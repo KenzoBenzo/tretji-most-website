@@ -18,102 +18,23 @@ import { SingleSection } from "../components/single-section";
 import Link from "next/link";
 import { PAGE } from "../graphql";
 import { request } from "graphql-request";
-import { Hero } from "../components/blocks";
+import { CardSection, Hero } from "../components/blocks";
 
 function IndexPage({ page }) {
-	const heroPage = page?.blocks[0];
+	const heroSection = page?.blocks[0];
+	const cardSection = page?.blocks[1];
 	return (
 		<>
 			{/* Hero section */}
 			<Hero
-				header={heroPage?.header}
-				subtitle={heroPage?.subtitle}
-				buttonText={heroPage?.buttonText}
-				hasForm={heroPage?.hasForm}
-				image={heroPage?.image}
+				header={heroSection?.header}
+				subtitle={heroSection?.subtitle}
+				buttonText={heroSection?.buttonText}
+				hasForm={heroSection?.hasForm}
+				image={heroSection?.image}
 			/>
 
-			<SingleSection>
-				<Stack
-					direction={["column", "column", "row"]}
-					justify="space-between"
-					shouldWrapChildren={true}
-					spacing={8}
-				>
-					<Link href="/how-we-work/#lectures" passHref>
-						<ChakraLink
-							display="inline-block"
-							textAlign="center"
-							borderRadius="6px"
-							p={8}
-							w="245px"
-							_hover={{
-								color: "blue.700",
-								backgroundColor: "blue.50",
-							}}
-						>
-							<LectureIcon boxSize={8} mb={4} />
-							<Text fontSize="xl" fontWeight={700}>
-								Predavanja
-							</Text>
-						</ChakraLink>
-					</Link>
-					<Link href="/how-we-work/#workshops" passHref>
-						<ChakraLink
-							display="inline-block"
-							textAlign="center"
-							borderRadius="6px"
-							p={8}
-							w="245px"
-							_hover={{
-								color: "blue.700",
-								backgroundColor: "blue.50",
-							}}
-						>
-							<WorkshopIcon boxSize={8} mb={4} />
-							<Text fontSize="xl" fontWeight={700}>
-								Delavnice
-							</Text>
-						</ChakraLink>
-					</Link>
-					<Link href="/how-we-work/#culturalEvents" passHref>
-						<ChakraLink
-							display="inline-block"
-							textAlign="center"
-							borderRadius="6px"
-							p={8}
-							w="245px"
-							_hover={{
-								color: "blue.700",
-								backgroundColor: "blue.50",
-							}}
-						>
-							<EventIcon boxSize={8} mb={4} />
-							<Text fontSize="xl" fontWeight={700}>
-								Kulturne prireditve
-							</Text>
-						</ChakraLink>
-					</Link>
-					<Link href="/how-we-work/#schooling" passHref>
-						<ChakraLink
-							display="inline-block"
-							textAlign="center"
-							borderRadius="6px"
-							p={8}
-							w="245px"
-							_hover={{
-								color: "blue.700",
-								backgroundColor: "blue.50",
-							}}
-						>
-							<EducationIcon boxSize={8} mb={4} />
-							<Text fontSize="xl" fontWeight={700}>
-								Šolanje
-							</Text>
-						</ChakraLink>
-					</Link>
-				</Stack>
-			</SingleSection>
+			<CardSection heading={cardSection.heading} cards={cardSection.cards} />
 
 			<DoubleSection
 				heading="Namen naše dejavnosti"
