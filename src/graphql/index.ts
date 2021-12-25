@@ -9,6 +9,7 @@ export const PAGE = gql`
 					header
 					subtitle
 					buttonText
+					hasForm
 					image {
 						handle
 						height

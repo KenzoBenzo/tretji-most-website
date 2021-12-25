@@ -2,13 +2,7 @@ import React from "react";
 import {
 	Box,
 	Heading,
-	Flex,
 	Text,
-	FormControl,
-	FormLabel,
-	Input,
-	Button,
-	Image,
 	Link as ChakraLink,
 	Stack,
 } from "@chakra-ui/react";
@@ -24,63 +18,20 @@ import { SingleSection } from "../components/single-section";
 import Link from "next/link";
 import { PAGE } from "../graphql";
 import { request } from "graphql-request";
+import { Hero } from "../components/blocks";
 
 function IndexPage({ page }) {
-	console.log(page);
+	const heroPage = page?.blocks[0];
 	return (
 		<>
-			<Flex mb={64} direction={["column", "row"]}>
-				<Box w="50%" h="400px" py={32} px={40}>
-					<Heading as="h1" fontSize="48px">
-						Duhovna Kultura,
-						<br /> Kulturna Duhovnost
-					</Heading>
-
-					<Text fontSize="md" mt={8}>
-						Here is a small few sentences about TM and why you should be
-						interested in joining us! Maybe a bit more also goes here.
-					</Text>
-
-					<Stack
-						as="form"
-						mt={16}
-						direction={["column", "row"]}
-						alignItems="flex-end"
-					>
-						<FormControl isRequired minW="200px">
-							<FormLabel>Ime</FormLabel>
-							<Input type="name" />
-						</FormControl>
-						<FormControl isRequired minW="200px">
-							<FormLabel>E-naslov</FormLabel>
-							<Input type="email" />
-						</FormControl>
-						<Button
-							colorScheme="blue"
-							fontWeight={700}
-							type="submit"
-							minW="fit-content"
-						>
-							Pridružite se nam
-						</Button>
-					</Stack>
-				</Box>
-
-				<Box
-					bgGradient="linear(to-b, blue.50, blue.100, blue.200, blue.300, blue.400, blue.500,blue.600, blue.700,blue.800, blue.900)"
-					w="50%"
-					h="400px"
-					p={32}
-					zIndex={0}
-					borderBottomLeftRadius="lg"
-				>
-					<Image
-						src="https://media.graphcms.com/Az4WqNJVTyCCzeyaj5rE"
-						borderRadius="lg"
-						maxH="400px"
-					/>
-				</Box>
-			</Flex>
+			{/* Hero section */}
+			<Hero
+				header={heroPage?.header}
+				subtitle={heroPage?.subtitle}
+				buttonText={heroPage?.buttonText}
+				hasForm={heroPage?.hasForm}
+				image={heroPage?.image}
+			/>
 
 			<SingleSection>
 				<Stack
