@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import LocaleContext, { locales } from "../components/context/get-locale";
 import Link from "next/link";
-import { client } from "../components/utils/graphql-client";
-import { gql } from "graphql-request";
+// import { client } from "../components/utils/graphql-client";
+// import { gql } from "graphql-request";
 
 const Navigation = () => {
 	const { currentLocale, updateLocale } = useContext(LocaleContext);
@@ -22,24 +22,24 @@ const Navigation = () => {
 				String.fromCodePoint(char.charCodeAt(0) + 127397)
 			);
 
-	const data = client.request(
-		gql`
-			{
-				navigation(where: { id: "ckj67aamg6t8k0a57vsowtc0r" }) {
-					logo {
-						handle
-					}
-					navigationLinks {
-						localizations(includeCurrent: true) {
-							locale
-							text
-							path
-						}
-					}
-				}
-			}
-		`
-	);
+	// const data = client.request(
+	// 	gql`
+	// 		{
+	// 			navigation(where: { id: "ckj67aamg6t8k0a57vsowtc0r" }) {
+	// 				logo {
+	// 					handle
+	// 				}
+	// 				navigationLinks {
+	// 					localizations(includeCurrent: true) {
+	// 						locale
+	// 						text
+	// 						path
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	`
+	// );
 
 	return (
 		<Flex
