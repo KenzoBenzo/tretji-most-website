@@ -41,8 +41,6 @@ const Navigation = () => {
 		`
 	);
 
-	console.log(data);
-
 	return (
 		<Flex
 			minW="fit-content"
