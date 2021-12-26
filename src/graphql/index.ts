@@ -29,13 +29,13 @@ export const PAGE = gql`
 					}
 				}
 				... on DoubleSection {
-					DoubleSectionHeader: header
+					doubleSectionHeader: header
 					body {
 						markdown
 						html
 					}
 					reverseSection
-					DoubleSectionImage: image {
+					doubleSectionImage: image {
 						handle
 						height
 						width

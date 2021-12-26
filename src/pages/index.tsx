@@ -1,55 +1,29 @@
 import React from "react";
-import {
-	Box,
-	Heading,
-	Text,
-	Link as ChakraLink,
-	Stack,
-} from "@chakra-ui/react";
-import {
-	LectureIcon,
-	WorkshopIcon,
-	EventIcon,
-	EducationIcon,
-} from "../theme/icons";
-import { DoubleSection } from "../components/double-section";
+import { Box, Heading, Stack } from "@chakra-ui/react";
 import ImageCard from "../components/image-card";
-import { SingleSection } from "../components/single-section";
-import Link from "next/link";
 import { PAGE } from "../graphql";
 import { request } from "graphql-request";
-import { CardSection, Hero } from "../components/blocks";
+import { CardSection, DoubleSection, Hero } from "../components/blocks";
 
 function IndexPage({ page }) {
 	const heroSection = page?.blocks[0];
 	const cardSection = page?.blocks[1];
+	const doubleSection1 = page?.blocks[2];
+	const doubleSection2 = page?.blocks[3];
 	return (
 		<>
+			{page.blocks.map((block, index) => {
+				console.log(block.__typename);
+			})}
+
 			{/* Hero section */}
-			<Hero
-				header={heroSection?.header}
-				subtitle={heroSection?.subtitle}
-				buttonText={heroSection?.buttonText}
-				hasForm={heroSection?.hasForm}
-				image={heroSection?.image}
-			/>
+			<Hero {...heroSection} />
 
-			<CardSection heading={cardSection.heading} cards={cardSection.cards} />
+			<CardSection {...cardSection} />
 
-			<DoubleSection
-				heading="Namen naše dejavnosti"
-				text="O povezavi umetnosti in pedagogike, socialna vloga umetnosti, Tričlenost."
-			>
-				<Box w="full" h="256px" backgroundColor="gray.50" mr={16} />
-			</DoubleSection>
+			<DoubleSection {...doubleSection1} />
 
-			<DoubleSection
-				reverse
-				heading="Pregled — kako organiziramo projekte"
-				text="Profesionalni kriteriji za projekte, ki jih izvajamo."
-			>
-				<Box w="full" h="256px" backgroundColor="gray.50" ml={16} />
-			</DoubleSection>
+			<DoubleSection {...doubleSection2} />
 
 			<Box maxW="1200px" mx="auto">
 				<Heading as="h1">Naše delo</Heading>

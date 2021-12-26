@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading, Text, Flex, Link, Image } from "@chakra-ui/react";
-import { DoubleSection } from "../components/double-section";
+import { DoubleSection } from "../components/blocks/double-section";
 import { SingleSection } from "../components/single-section";
 
 const HowWeWorkPage = () => {

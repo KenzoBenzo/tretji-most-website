@@ -9,7 +9,17 @@ import {
 import { SingleSection } from "../single-section";
 import Link from "next/link";
 
-const Card = ({ title, link, image }) => {
+type CardProps = {
+	title: string;
+	link: string;
+	image: {
+		handle: string;
+		height: number;
+		width: number;
+	};
+};
+
+const Card = ({ title, link, image }: CardProps) => {
 	return (
 		<Link href={link} passHref>
 			<ChakraLink
@@ -26,6 +36,7 @@ const Card = ({ title, link, image }) => {
 				<Image
 					src={`https://media.graphcms.com/${image.handle}`}
 					mb={4}
+					mx="auto"
 					boxSize={8}
 				/>
 				<Text fontSize="xl" fontWeight={700}>
@@ -36,8 +47,12 @@ const Card = ({ title, link, image }) => {
 	);
 };
 
-export const CardSection = ({ heading, cards }) => {
-	console.log(cards);
+type CardSectionProps = {
+	heading: string;
+	cards: CardProps[];
+};
+
+export const CardSection = ({ heading, cards }: CardSectionProps) => {
 	return (
 		<SingleSection>
 			{heading && (
