@@ -13,19 +13,30 @@ type EventCardProps = {
 	title: string;
 	date: string;
 	description: string;
-	status: "past" | "limited" | "open";
+	eventStatus: "past" | "limited" | "open";
 };
 
-const EventCard = ({ title, date, description, status }: EventCardProps) => {
+const EventCard = ({
+	title,
+	date,
+	description,
+	eventStatus,
+}: EventCardProps) => {
+	const formattedDate = new Date(date).toLocaleDateString("en-US", {
+		hour: "numeric",
+		minute: "numeric",
+		day: "numeric",
+		month: "short",
+	});
 	return (
 		<>
 			<Alert
 				colorScheme={
-					status === "past"
+					eventStatus === "past"
 						? "gray"
-						: status === "limited"
+						: eventStatus === "limited"
 						? "amber"
-						: status === "open"
+						: eventStatus === "open"
 						? "emerald"
 						: "gray"
 				}
@@ -33,26 +44,27 @@ const EventCard = ({ title, date, description, status }: EventCardProps) => {
 				borderRadius="lg"
 				maxW="600px"
 				mb={8}
-				opacity={status === "past" ? "50%" : null}
+				mx="auto"
+				opacity={eventStatus === "past" ? "50%" : null}
 			>
 				<Box>
 					<Flex justify="space-between" mb={4}>
 						<AlertTitle fontSize="lg">{title}</AlertTitle>
-						<AlertTitle fontSize="lg">{date}</AlertTitle>
+						<AlertTitle fontSize="lg">{formattedDate}</AlertTitle>
 					</Flex>
 					<AlertDescription>{description}</AlertDescription>
 					<ButtonGroup
 						spacing={8}
 						colorScheme={
-							status === "past"
+							eventStatus === "past"
 								? "gray"
-								: status === "limited"
+								: eventStatus === "limited"
 								? "amber"
-								: status === "open"
+								: eventStatus === "open"
 								? "emerald"
 								: "gray"
 						}
-						isDisabled={status === "past"}
+						isDisabled={eventStatus === "past"}
 						display="block"
 						w="full"
 						mt={4}
