@@ -8,7 +8,6 @@ const AboutUsPage = ({ page }) => {
 		<>
 			{page.blocks.map((block, index) => {
 				const Component = Blocks[block.__typename];
-				console.log(block.__typename);
 				return <Component key={index} {...block} />;
 			})}
 		</>
