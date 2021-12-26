@@ -4,6 +4,7 @@ import { request } from "graphql-request";
 import * as Blocks from "../components/blocks";
 
 const IndexPage = ({ page }) => {
+	console.log(page);
 	return (
 		<>
 			{page.blocks.map((block, index) => {

@@ -9,6 +9,7 @@ type SectionProps = {
 	};
 	hero?: boolean;
 	props?: any;
+	children?: any;
 };
 
 export const SingleSection = ({
@@ -16,6 +17,7 @@ export const SingleSection = ({
 	anchor,
 	body,
 	hero,
+	children,
 	...props
 }: SectionProps) => (
 	<Box as="section" maxW="1200px" mx="auto" py={16} {...props}>
@@ -35,5 +37,6 @@ export const SingleSection = ({
 				{body.markdown}
 			</Text>
 		) : null}
+		{children && children}
 	</Box>
 );
