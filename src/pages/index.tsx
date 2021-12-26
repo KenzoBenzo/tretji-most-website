@@ -3,7 +3,7 @@ import { PAGE } from "../graphql";
 import { request } from "graphql-request";
 import * as Blocks from "../components/blocks";
 
-function IndexPage({ page }) {
+const IndexPage = ({ page }) => {
 	return (
 		<>
 			{page.blocks.map((block, index) => {
@@ -13,7 +13,7 @@ function IndexPage({ page }) {
 			})}
 		</>
 	);
-}
+};
 
 export async function getStaticProps() {
 	const { page } = await request(
