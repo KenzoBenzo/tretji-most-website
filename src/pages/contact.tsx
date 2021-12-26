@@ -7,7 +7,7 @@ import {
 	FormControl,
 	Box,
 } from "@chakra-ui/react";
-import { SingleSection } from "../components/single-section";
+import { SingleSection } from "../components/blocks/single-section";
 
 const ContactPage = () => {
 	return (

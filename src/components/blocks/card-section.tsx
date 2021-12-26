@@ -6,7 +6,7 @@ import {
 	Image,
 	Heading,
 } from "@chakra-ui/react";
-import { SingleSection } from "../single-section";
+import { SingleSection } from "./single-section";
 import Link from "next/link";
 
 type CardProps = {

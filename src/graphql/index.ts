@@ -47,6 +47,12 @@ export const PAGE = gql`
 					date
 					eventStatus
 				}
+				... on SingleSection {
+					body {
+						markdown
+						html
+					}
+				}
 			}
 		}
 	}
