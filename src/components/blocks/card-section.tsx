@@ -12,7 +12,7 @@ import Link from "next/link";
 type CardProps = {
 	title: string;
 	link: string;
-	image: {
+	image?: {
 		handle: string;
 		height: number;
 		width: number;
@@ -34,10 +34,10 @@ const Card = ({ title, link, image }: CardProps) => {
 				}}
 			>
 				<Image
-					src={`https://media.graphcms.com/${image.handle}`}
+					src={image && `https://media.graphcms.com/${image.handle}`}
 					mb={4}
 					mx="auto"
-					boxSize={8}
+					borderRadius={4}
 				/>
 				<Text fontSize="xl" fontWeight={700}>
 					{title}
