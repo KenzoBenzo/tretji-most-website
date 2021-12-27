@@ -2,25 +2,27 @@ import React from "react";
 import { Box, Heading, Link, Text } from "@chakra-ui/react";
 
 type SectionProps = {
-	children: Object;
 	heading?: string;
 	anchor?: string;
-	text?: string;
+	body?: {
+		markdown: string;
+	};
 	hero?: boolean;
 	props?: any;
+	children?: any;
 };
 
 export const SingleSection = ({
-	children,
 	heading,
 	anchor,
-	text,
+	body,
 	hero,
+	children,
 	...props
 }: SectionProps) => (
 	<Box as="section" maxW="1200px" mx="auto" py={16} {...props}>
 		{heading ? (
-			<Heading as="h2" textStyle="h2" textAlign="center" mb={6}>
+			<Heading as="h2" textStyle="h2" mb={6}>
 				{anchor ? (
 					<Link id={anchor} _hover={{ textDecoration: "none", cursor: "auto" }}>
 						{heading}
@@ -30,11 +32,11 @@ export const SingleSection = ({
 				)}
 			</Heading>
 		) : null}
-		{text ? (
-			<Text fontSize="2xl" textAlign="center" mb={12} lineHeight="short">
-				{text}
+		{body ? (
+			<Text fontSize="2xl" mb={12} lineHeight="short">
+				{body.markdown}
 			</Text>
 		) : null}
-		{children}
+		{children && children}
 	</Box>
 );
