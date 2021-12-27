@@ -2,6 +2,7 @@ import React from "react";
 import { PAGE } from "../graphql";
 import { request } from "graphql-request";
 import * as Blocks from "../components/blocks";
+import { GetStaticProps } from "next";
 
 const CalendarPage = ({ page }) => {
 	return (
@@ -14,7 +15,7 @@ const CalendarPage = ({ page }) => {
 	);
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
 	const { page } = await request(
 		"https://api-eu-central-1.graphcms.com/v2/ckj65vblcx4gy01xp4m948jkr/master",
 		PAGE,
@@ -27,6 +28,6 @@ export async function getStaticProps() {
 			page,
 		},
 	};
-}
+};
 
 export default CalendarPage;
