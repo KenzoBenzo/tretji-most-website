@@ -16,7 +16,7 @@ type EventCardProps = {
 	eventStatus: "past" | "limited" | "open";
 };
 
-const EventCard = ({
+export const Event = ({
 	title,
 	date,
 	description,
@@ -77,5 +77,3 @@ const EventCard = ({
 		</>
 	);
 };
-
-export default EventCard;
