@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		"https://api-eu-central-1.graphcms.com/v2/ckj65vblcx4gy01xp4m948jkr/master",
 		PAGE,
 		{
-			slug: "index",
+			slug: "home",
 		}
 	);
 	return {
